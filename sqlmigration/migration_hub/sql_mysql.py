@@ -1,3 +1,4 @@
+import sys
 def migration_convertion(archivo_origen):
     try:
         ruta_origen_migracion='sqlmigration/archivos_sql/'+archivo_origen
@@ -46,6 +47,7 @@ def migration_convertion(archivo_origen):
             with open(ruta_destino_migracion,'w')as escritura_destino_sql:
                 escritura_destino_sql.write(lineas_lect)
             
-        print("SINTAXIS TRANSFORMADA CORRECTAMENTE!!!")        
+        print("SINTAXIS TRANSFORMADA CORRECTAMENTE!!!")     
+        
     except:
         print("Error al leer el archivo")
