@@ -25,7 +25,7 @@ def crear_db():
         cursor=connection.cursor()
 
         cursor.execute(f"CREATE DATABASE {nombre};")
-        cursor.execute(f"USE {nombre};")
+        
         print("Base De Datos Creada Correctamente\n")
 
         for _ in range(10):
@@ -41,6 +41,7 @@ def crear_db():
         ruta_script_destino='sqlmigration/archivos_sql/destino_migracion.sql'
         with open(ruta_script_destino,'r')as lineas_sintaxis:
             data=lineas_sintaxis.readline()
+            cursor.execute(f"USE {nombre};")
             cursor.execute(data)
             connection.commit()
         print("Migracion Exitosa !!!! SQL SERVER > MYSQL WORKBENCH")

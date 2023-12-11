@@ -23,7 +23,7 @@ def migration_convertion(archivo_origen):
         sql_script=sql_script.replace("WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]", "")    
         sql_script=sql_script.replace("GETDATE()","CURRENT_TIMESTAMP()")
 
-        sql_script=sql_script.replace("')","');")
+        #sql_script=sql_script.replace("')","');")
         lineas=sql_script.split('\n')
         for i, linea in enumerate(lineas):
             if "CONSTRAINT" in linea:
