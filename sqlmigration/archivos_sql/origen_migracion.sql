@@ -41,32 +41,3 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (1, N'GLORIA')
-INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (2, N'FRIOL')
-INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (3, N'PRIMOR')
-INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (4, N'CRISOL')
-INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (5, N'COMPASS')
-INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (6, N'DORINA')
-INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (7, N'LA DANESSA')
-INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (8, N'ANCHOR')
-
-GO
-
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (1, N'LECHE GLORIA 250ML', 1)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (2, N'FRIOL GALON', 2)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (3, N'FRIOL 3/4 LT', 2)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (4, N'FRIOL 1/2 lt', 2)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (5, N'FRIOL 5 LT', 2)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (6, N'FRIOL 10 LT', 2)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (7, N'PRIMOR 1LT', 3)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (8, N'PRIMOR 5 LT', 3)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (9, N'PRIMOR 3/4 LT', 3)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (10, N'CRISOL 1 LT', 4)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (11, N'CRISOL 1/2LT', 4)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (12, N'DORINA 225  x 1', 6)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (13, N'DORINA 225 x 12', 6)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (14, N'DANESSA 225 X12', 7)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (15, N'DANESSA 225 X 1', 7)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (16, N'ANCHOR 1KG', 8)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (17, N'ANCHOR  5 KG', 8)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (18, N'ANCHOR 1/2 KG', 8)
-INSERT [dbo].[PRODUCTO] ([ProductoID], [ProductoDescripcion], [MarcaID]) VALUES (19, N'ANCHOR X 24', 8)

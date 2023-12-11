@@ -38,10 +38,12 @@ def crear_db():
             sys.stdout.write("<")
             sys.stdout.flush()
             time.sleep(0.1)
+        print("\n")
         ruta_script_destino='sqlmigration/archivos_sql/destino_migracion.sql'
         with open(ruta_script_destino,'r')as lineas_sintaxis:
-            data=lineas_sintaxis.readline()
+            data=lineas_sintaxis.readlines()
             cursor.execute(f"USE {nombre};")
+            print("DATOS DEL SCRIPT-> ",data)
             cursor.execute(data)
             connection.commit()
         print("Migracion Exitosa !!!! SQL SERVER > MYSQL WORKBENCH")
