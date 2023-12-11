@@ -1,4 +1,5 @@
 import sys
+import re
 def migration_convertion(archivo_origen):
     try:
         ruta_origen_migracion='sqlmigration/archivos_sql/'+archivo_origen
@@ -13,8 +14,8 @@ def migration_convertion(archivo_origen):
             lineas_txt=lectura_origen_txt.readlines()
         lineas_txt=lineas_txt[12:]
         sql_script=''.join(lineas_txt)
-        sql_script=sql_script.replace("AS","BEGIN").replace("as","begin")
-        #sql_script=sql_script.replace("GO","")
+        #sql_script=sql_script.replace("AS","BEGIN").replace("as","begin")
+        sql_script=sql_script.replace("GO","")
         sql_script=sql_script.replace("[dbo].","").replace("[","").replace("]","")
         sql_script=sql_script.replace("IDENTITY(1,1)","PRIMARY KEY")
         sql_script=sql_script.replace("nvarchar","varchar")
@@ -22,6 +23,7 @@ def migration_convertion(archivo_origen):
         sql_script=sql_script.replace("WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]", "")    
         sql_script=sql_script.replace("GETDATE()","CURRENT_TIMESTAMP()")
 
+        sql_script=sql_script.replace("')","');")
         lineas=sql_script.split('\n')
         for i, linea in enumerate(lineas):
             if "CONSTRAINT" in linea:
@@ -38,7 +40,8 @@ def migration_convertion(archivo_origen):
         sql_script = sql_script.replace("CREATE PROCEDURE", "DELIMITER $$\nCREATE PROCEDURE")
         sql_script = sql_script.replace("CREATE TRIGGER", "DELIMITER $$\nCREATE TRIGGER")
         sql_script = sql_script.replace("CREATE FUNCTION", "DELIMITER $$\nCREATE FUNCTION")
-        
+        sql_script=sql_script.replace("N'","'")
+
         #nuevas_lineas=sql_script[24:]
         with open(ruta_destino_migracion_txt,'w')as escritura_destino_txt:
             data=escritura_destino_txt.write(sql_script)

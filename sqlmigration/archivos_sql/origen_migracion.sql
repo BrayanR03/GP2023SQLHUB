@@ -27,7 +27,7 @@ GO
 CREATE TABLE [dbo].[PRODUCTO](
 	[ProductoID] [int] IDENTITY(1,1) NOT NULL,
 	[ProductoDescripcion] [nvarchar](50) NOT NULL,
-	[MarcaID] [int] NULL,
+	[MarcaID] [int] NOT NULL,
  CONSTRAINT [PK_PRODUCTO] PRIMARY KEY CLUSTERED 
 (
 	[ProductoID] ASC
@@ -38,14 +38,6 @@ GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROCEDURE [dbo].[BuscarProducto]
-@NombreProducto nvarchar(50)
-as
-SELECT P.ProductoDescripcion AS PRODUCTO,M.MarcaDescripcion AS MARCA
-FROM PRODUCTO P INNER JOIN MARCA M
-ON M.MarcaID=P.MarcaID
-WHERE P.ProductoDescripcion = NombreProducto
 GO
 
 INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (1, N'GLORIA')
