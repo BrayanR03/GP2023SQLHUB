@@ -41,3 +41,6 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (1, N'GLORIA')
+INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (3, N'PRIMOR')
+INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (4, N'CRISOL')
+INSERT [dbo].[MARCA] ([MarcaID], [MarcaDescripcion]) VALUES (5, N'COMPASS')
