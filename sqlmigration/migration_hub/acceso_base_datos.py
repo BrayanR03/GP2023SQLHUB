@@ -104,10 +104,9 @@ def acceso_mysql_workbench():
             ##linea_insert=[linea.strip() for linea in data if linea.startswith('INSERT')]
             ##data_insert=''.join(linea_insert).replace(")I",");I")
             ##data_insert.replace(")I",");I")
-            #patron_insert = re.compile(r'INSERT\s+[^;]+;')
-            #coincidencias=patron_insert.findall(data_insert)
-            #for sentencia in coincidencias:
-            #    print("ES: ",sentencia)
+            patron_insert = re.compile(r'INSERT\s+[^;]+;')
+            coincidencias=patron_insert.findall(data_insert)
+            
                 #connection_i=mysql.connector.connect(**configuracion)
                 #cursor_insert=connection_i.cursor()
                 #cursor_insert.execute(f'USE {nombre};')
@@ -119,7 +118,11 @@ def acceso_mysql_workbench():
             ##filas_insertadas=cursor.rowcount
             ##print("filas registradas -->",filas_insertadas)
         crear_tablas_base(nombre,data_create)
-        insertar_data_tablas(nombre)
+        for sentencia in coincidencias:
+                print("ES: ",sentencia)
+                insertar_data_tablas(nombre,sentencia)
+        print("Migracion Exitosa!!!")
+        #insertar_data_tablas(nombre)
     except:
         print(f"Error")
    
